@@ -2,10 +2,25 @@
 <prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
+             xmlns:mtrl="clr-namespace:XF.Material.Forms.Resources;assembly=XF.Material"
+             xmlns:mtrltypo="clr-namespace:XF.Material.Forms.Resources.Typography;assembly=XF.Material"
              x:Class="EMRA.App">
-  <Application.Resources>
+    <Application.Resources>
 
-    <!-- Application resource dictionary -->
+        <!-- Application resource dictionary -->
+        <OnPlatform x:Key="FontFamily.FuturaRegular"
+                    x:TypeArguments="x:String"
+                    Android="Fonts/Futura.ttf#Futura"
+                    iOS="Futura" />
+        <mtrltypo:MaterialFontConfiguration x:Key="Material.Font" />
+        <mtrl:MaterialColorConfiguration x:Key="Material.Color"
+                                         Primary="#4dd0e1"
+                                         PrimaryVariant="#009faf"
+                                         Secondary="#e57373"
+                                         SecondaryVariant="#af4448"
+                                         Error="#ffa4a2"/>
 
-  </Application.Resources>
+        <mtrl:MaterialConfiguration x:Key="Material_Configuration" ColorConfiguration="{StaticResource Material.Color}" FontConfiguration="{StaticResource Material.Font}" />
+    </Application.Resources>
 </prism:PrismApplication>
+    

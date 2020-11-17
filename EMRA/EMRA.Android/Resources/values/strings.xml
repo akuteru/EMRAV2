@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="app_name">EMRA.Droid</string>
+  <string name="facebook_app_name">EMRA</string>
+  <string name="facebook_app_id">555028398712152</string>
+  <string name="fb_login_protocol_scheme">fb555028398712152</string>
 </resources>

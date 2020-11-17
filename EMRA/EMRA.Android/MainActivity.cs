@@ -1,6 +1,7 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Plugin.FacebookClient;
 using Prism;
 using Prism.Ioc;
 
@@ -16,8 +17,11 @@ namespace EMRA.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
-
+            FacebookClientManager.Initialize(this);
+            Xamarin.FormsGoogleMaps.Init(this, savedInstanceState);
+            Xamarin.FormsGoogleMapsBindings.Init();
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            XF.Material.Droid.Material.Init(this, savedInstanceState);
             LoadApplication(new App(new AndroidInitializer()));
         }
 

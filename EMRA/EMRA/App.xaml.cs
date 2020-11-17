@@ -5,11 +5,13 @@ using EMRA.Views;
 using Xamarin.Essentials.Interfaces;
 using Xamarin.Essentials.Implementation;
 using Xamarin.Forms;
+using EMRA.Models;
 
 namespace EMRA
 {
     public partial class App
     {
+        public static SocialLoginData socialData { get; set; }
         public App(IPlatformInitializer initializer)
             : base(initializer)
         {
@@ -18,8 +20,8 @@ namespace EMRA
         protected override async void OnInitialized()
         {
             InitializeComponent();
-
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            XF.Material.Forms.Material.Init(this);
+            await NavigationService.NavigateAsync("NavigationPage/LoginPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -28,6 +30,7 @@ namespace EMRA
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
         }
     }
 }

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com" xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="EMRA.Views.LoginPage">
+    <ScrollView BackgroundColor="#EEE" Padding="20">
+        <Frame BackgroundColor="White">
+            <StackLayout Spacing="4" >
+                <material:MaterialLabel Text="Welcome to EMRA" HorizontalTextAlignment="Center" Margin="0,10,0,25"/>
+                <material:MaterialTextField Placeholder="Username" Margin="5"/>
+                <material:MaterialTextField Placeholder="Password" InputType="Password" Margin="5,0" />
+                <material:MaterialButton Grid.Column="0" Text="Login" Margin="0"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width=".5*" />
+                        <ColumnDefinition Width=".5*" />
+                    </Grid.ColumnDefinitions>
+                    <material:MaterialButton Grid.Column="1"  Text="Sign in with Facebook"/>
+                    <material:MaterialButton Grid.Column="0" Text="Sign in with Google" Command="{Binding FacebookLogin}" />
+                </Grid>
+            </StackLayout>
+        </Frame>
+    </ScrollView>
+</ContentPage>

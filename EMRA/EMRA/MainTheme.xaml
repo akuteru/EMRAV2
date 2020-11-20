@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EMRA.MainTheme">
+    
+    <OnPlatform x:Key="IconFont" x:TypeArguments="x:String">
+        <OnPlatform.Platforms>
+            <On Platform="Android" Value="icofont.ttf#Icofont" />
+            <On Platform="iOS" Value="icofont" />
+        </OnPlatform.Platforms>
+    </OnPlatform>
+
+    <x:String x:Key="Menu">&#xefa2;</x:String>
+    <x:String x:Key="Search">&#xec82;</x:String>
+    <x:String x:Key="MapPin">&#xed42;</x:String>
+    <x:String x:Key="Back">&#xea5c;</x:String>
+    <x:String x:Key="Home">&#xec5e;</x:String>
+    <x:String x:Key="Facebook">&#xed37;</x:String>
+    <x:String x:Key="Alarm">&#xec3f;</x:String>
+    <x:String x:Key="Notification">&#xeea3;</x:String>
+    <x:String x:Key="Bell">&#xefac;</x:String>
+    <x:String x:Key="Calendar">&#xec45;</x:String>
+    <x:String x:Key="Physician">&#xec19;</x:String>
+    <x:String x:Key="Laboratory">&#xec25;</x:String>
+    <x:String x:Key="Medicine">&#xef8e;</x:String>
+    <x:String x:Key="CheckupRecord">&#xec2e;</x:String>
+</ResourceDictionary>

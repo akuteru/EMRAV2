@@ -20,13 +20,17 @@ namespace EMRA.ViewModels
             get { return _isExecutable; }
             set { SetProperty(ref _isExecutable, value); }
         }
-        private DelegateCommand _facebookLogin;
         IFacebookClient _facebookService = CrossFacebookClient.Current;
         private readonly INavigationService _navigationService;
-        public DelegateCommand FacebookLogin => _facebookLogin ?? (_facebookLogin = new DelegateCommand(ExecuteFacebookLogin));
+        public DelegateCommand FacebookLogin { get; private set; }
         public LoginPageViewModel(INavigationService navigationService) : base(navigationService)
         {
             _navigationService = navigationService;
+            FacebookLogin = new DelegateCommand(ExecuteFacebookLogin, CanSubmit);
+        }
+        bool CanSubmit()
+        {
+            return true;
         }
         async void ExecuteFacebookLogin()
         {
@@ -52,7 +56,7 @@ namespace EMRA.ViewModels
                                 ProfilePicture = facebookProfile.Picture
 
                             };
-                            App.socialData = socialLoginData;
+                            App.SocialData = socialLoginData;
                             await NavigationService.NavigateAsync("/MainPage");
                             break;
                         case FacebookActionStatus.Canceled:

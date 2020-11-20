@@ -11,7 +11,7 @@ namespace EMRA
 {
     public partial class App
     {
-        public static SocialLoginData socialData { get; set; }
+        public static SocialLoginData SocialData { get; set; }
         public App(IPlatformInitializer initializer)
             : base(initializer)
         {
@@ -19,9 +19,10 @@ namespace EMRA
 
         protected override async void OnInitialized()
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mjk1Mjc4QDMxMzgyZTMyMmUzMEJpUUVva0lzL0F1S2Z4QzRmYVRnMTF5a0tvalZVTlZhTzFNYWYrQ3lZdW89");
             InitializeComponent();
             XF.Material.Forms.Material.Init(this);
-            await NavigationService.NavigateAsync("NavigationPage/LoginPage");
+            await NavigationService.NavigateAsync("MainBottomTabbedPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -31,6 +32,12 @@ namespace EMRA
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+            containerRegistry.RegisterForNavigation<MainBottomTabbedPage, MainBottomTabbedPageViewModel>();
+            containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
+            containerRegistry.RegisterForNavigation<MapPage, MapPageViewModel>();
+            containerRegistry.RegisterForNavigation<SchedulePage, SchedulePageViewModel>();
+            containerRegistry.RegisterForNavigation<NotificationPage, NotificationPageViewModel>();
+            containerRegistry.RegisterForNavigation<UserMasterDetailPage, UserMasterDetailPageViewModel>();
         }
     }
 }

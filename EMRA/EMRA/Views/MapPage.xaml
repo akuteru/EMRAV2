@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com" xmlns:map="clr-namespace:Xamarin.Forms.GoogleMaps;assembly=Xamarin.Forms.GoogleMaps" xmlns:binding="clr-namespace:Xamarin.Forms.GoogleMaps.Bindings;assembly=Xamarin.Forms.GoogleMaps.Bindings" xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="EMRA.Views.MapPage">
+    <ContentPage.Content>
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
+            <Frame HasShadow="True" HeightRequest="40" HorizontalOptions="FillAndExpand">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label FontFamily="{DynamicResource IconFont}" Text="{DynamicResource Search}" />
+                    <Entry Grid.Column="1" Placeholder="Search by name" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
+                    <material:MaterialButton Grid.Column="2" ButtonType="Flat" FontFamily="{DynamicResource IconFont}" Text="{DynamicResource Menu}" />
+                </Grid>
+            </Frame>
+            <map:Map x:Name="medicalMap">
+                <map:Map.Behaviors>
+                    <binding:BindingPinsBehavior Value="{Binding SetAppointment}" />
+                </map:Map.Behaviors>
+            </map:Map>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

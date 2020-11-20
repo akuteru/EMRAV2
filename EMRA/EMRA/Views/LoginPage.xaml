@@ -16,8 +16,8 @@
                         <ColumnDefinition Width=".5*" />
                         <ColumnDefinition Width=".5*" />
                     </Grid.ColumnDefinitions>
-                    <material:MaterialButton Grid.Column="1"  Text="Sign in with Facebook"/>
-                    <material:MaterialButton Grid.Column="0" Text="Sign in with Google" Command="{Binding FacebookLogin}" />
+                    <material:MaterialButton Grid.Column="1"  Text="Sign in with Facebook"  Command="{Binding FacebookLogin}" />
+                    <material:MaterialButton Grid.Column="0" Text="Sign in with Google"/>
                 </Grid>
             </StackLayout>
         </Frame>

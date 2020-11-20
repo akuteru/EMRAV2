@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:prism="http://prismlibrary.com" xmlns:views="clr-namespace:EMRA.Views"
+            prism:ViewModelLocator.AutowireViewModel="True"
+            x:Class="EMRA.Views.MainBottomTabbedPage"
+            BarBackgroundColor="White"
+            NavigationPage.HasNavigationBar="False">
+    <views:HomePage Title="Home">
+        <views:HomePage.IconImageSource>
+            <FontImageSource FontFamily="{DynamicResource IconFont}"
+                             Glyph="{DynamicResource Home}"
+                             Size="16"/>
+        </views:HomePage.IconImageSource>
+    </views:HomePage>
+    <views:MapPage Title="Map">
+        <views:MapPage.IconImageSource>
+            <FontImageSource FontFamily="{DynamicResource IconFont}"
+                             Glyph="{DynamicResource Map}"
+                             Size="16"/>
+        </views:MapPage.IconImageSource>
+    </views:MapPage>
+    <views:SchedulePage Title="Schedule">
+        <views:SchedulePage.IconImageSource>
+            <FontImageSource FontFamily="{DynamicResource IconFont}"
+                             Glyph="{DynamicResource Calendar}"
+                             Size="16"/>
+        </views:SchedulePage.IconImageSource>
+    </views:SchedulePage>
+    <views:NotificationPage Title="Notification">
+        <views:NotificationPage.IconImageSource>
+            <FontImageSource FontFamily="{DynamicResource IconFont}"
+                             Glyph="{DynamicResource Bell}"
+                             Size="16" />
+        </views:NotificationPage.IconImageSource>
+    </views:NotificationPage>
+</TabbedPage>

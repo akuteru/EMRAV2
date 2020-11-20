@@ -3,10 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="http://prismlibrary.com"
              xmlns:mtrl="clr-namespace:XF.Material.Forms.Resources;assembly=XF.Material"
-             xmlns:mtrltypo="clr-namespace:XF.Material.Forms.Resources.Typography;assembly=XF.Material"
-             x:Class="EMRA.App">
+             xmlns:mtrltypo="clr-namespace:XF.Material.Forms.Resources.Typography;assembly=XF.Material" xmlns:emra="clr-namespace:EMRA"
+                        x:Class="EMRA.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <emra:MainTheme/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
         <!-- Application resource dictionary -->
         <OnPlatform x:Key="FontFamily.FuturaRegular"
                     x:TypeArguments="x:String"

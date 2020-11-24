@@ -5,24 +5,31 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="EMRA.Views.MapPage">
     <ContentPage.Content>
-        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Padding="20">
-            <Frame HasShadow="True" HeightRequest="40" HorizontalOptions="FillAndExpand">
+        <Grid HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <map:Map x:Name="medicalMap">
+                <map:Map.Behaviors>
+                    <binding:BindingPinsBehavior Value="{Binding SetAppointment}" />
+                </map:Map.Behaviors>
+            </map:Map>
+            <Frame HasShadow="True" HeightRequest="40" HorizontalOptions="FillAndExpand" Padding="30,20,0,20" VerticalOptions="Start" Margin="30">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <Label FontFamily="{DynamicResource IconFont}" Text="{DynamicResource Search}" />
-                    <Entry Grid.Column="1" Placeholder="Search by name" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" />
-                    <material:MaterialButton Grid.Column="2" ButtonType="Flat" FontFamily="{DynamicResource IconFont}" Text="{DynamicResource Menu}" />
+                    <Label FontFamily="{DynamicResource IconFont}" Text="{DynamicResource Search}" FontSize="32" VerticalOptions="CenterAndExpand"/>
+                    <Entry Grid.Column="1" Placeholder="Search by name" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand" Margin="10,0,0,0" TextColor="#333" />
+                    <material:MaterialButton Grid.Column="2" ButtonType="Flat" FontFamily="{DynamicResource IconFont}" Text="{DynamicResource Next}" BackgroundColor="Transparent" TextColor="{DynamicResource PrimaryColor}" FontSize="36" VerticalOptions="Center" HorizontalOptions="End" CornerRadius="0" Padding="0" Margin="0"/>
                 </Grid>
             </Frame>
-            <map:Map x:Name="medicalMap">
-                <map:Map.Behaviors>
-                    <binding:BindingPinsBehavior Value="{Binding SetAppointment}" />
-                </map:Map.Behaviors>
-            </map:Map>
+            <Frame HorizontalOptions="FillAndExpand" VerticalOptions="End" Margin="35,0,35,35" Padding="10">
+                <StackLayout Spacing="5">
+                    <material:MaterialLabel FontFamily="{DynamicResource DefaultFont}" Text="Drag slider to adjust the search range" HorizontalTextAlignment="Center" />
+                    <material:MaterialSlider Value="7" MinValue="0" MaxValue="20" TrackColor="{DynamicResource SecondaryColorLight}" ThumbColor="{DynamicResource SecondaryColor}" />
+                    <material:MaterialButton BackgroundColor="{DynamicResource PrimaryColorDark}" Text="Find physician" />
+                </StackLayout>
+            </Frame>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

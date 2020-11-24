@@ -57,7 +57,7 @@ namespace EMRA.ViewModels
 
                             };
                             App.SocialData = socialLoginData;
-                            await NavigationService.NavigateAsync("/MainPage");
+                            await _navigationService.NavigateAsync("/MainTabbed");
                             break;
                         case FacebookActionStatus.Canceled:
                             break;

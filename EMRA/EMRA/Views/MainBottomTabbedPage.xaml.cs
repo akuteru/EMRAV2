@@ -7,6 +7,7 @@ namespace EMRA.Views
         public MainBottomTabbedPage()
         {
             InitializeComponent();
+            CurrentPage = Children[2];
         }
     }
 }

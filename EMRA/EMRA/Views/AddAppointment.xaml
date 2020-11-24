@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com" xmlns:ui="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
+             prism:ViewModelLocator.AutowireViewModel="True"
+            ui:MaterialNavigationPage.AppBarColor="{DynamicResource PrimaryColorDark}"
+            ui:MaterialNavigationPage.StatusBarColor="{DynamicResource PrimaryColor}"
+             Title="Set an appointment"
+             x:Class="EMRA.Views.AddAppointment">
+    <ContentPage.Content>
+        <Grid BackgroundColor="#EAEAEA">
+            <ScrollView Padding="15">
+                <StackLayout>
+                    
+                </StackLayout>
+            </ScrollView>
+            <Frame HorizontalOptions="FillAndExpand" VerticalOptions="End" BackgroundColor="White">
+                <StackLayout>
+                    <ui:MaterialButton BackgroundColor="{DynamicResource PrimaryColor}" Text="Test" TextColor="Black" CornerRadius="0" Padding="25" HorizontalOptions="End" VerticalOptions="Center" />
+                </StackLayout>
+            </Frame>
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>

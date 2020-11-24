@@ -2,36 +2,46 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:prism="http://prismlibrary.com" xmlns:views="clr-namespace:EMRA.Views"
+            xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material"
             prism:ViewModelLocator.AutowireViewModel="True"
             x:Class="EMRA.Views.MainBottomTabbedPage"
-            BarBackgroundColor="White"
+            material:MaterialNavigationPage.AppBarColor="{DynamicResource PrimaryColorDark}"
+            material:MaterialNavigationPage.StatusBarColor="{DynamicResource PrimaryColor}"
+            BarBackgroundColor="{DynamicResource PrimaryColorDark}"
             NavigationPage.HasNavigationBar="False">
-    <views:HomePage Title="Home">
+    <views:UserMenuPage Title="">
+        <views:UserMenuPage.IconImageSource>
+            <FontImageSource FontFamily="{DynamicResource IconFont}"
+                             Glyph="{DynamicResource User}"
+                             Size="24"/>
+        </views:UserMenuPage.IconImageSource>
+    </views:UserMenuPage>
+    <views:MapPage Title="">
+        <views:MapPage.IconImageSource>
+            <FontImageSource FontFamily="{DynamicResource IconFont}"
+                             Glyph="{DynamicResource MapPin}"
+                             Size="24"/>
+        </views:MapPage.IconImageSource>
+    </views:MapPage>
+    <views:HomePage Title="">
         <views:HomePage.IconImageSource>
             <FontImageSource FontFamily="{DynamicResource IconFont}"
                              Glyph="{DynamicResource Home}"
-                             Size="16"/>
+                             Size="24"/>
         </views:HomePage.IconImageSource>
     </views:HomePage>
-    <views:MapPage Title="Map">
-        <views:MapPage.IconImageSource>
-            <FontImageSource FontFamily="{DynamicResource IconFont}"
-                             Glyph="{DynamicResource Map}"
-                             Size="16"/>
-        </views:MapPage.IconImageSource>
-    </views:MapPage>
-    <views:SchedulePage Title="Schedule">
+    <views:SchedulePage Title="">
         <views:SchedulePage.IconImageSource>
             <FontImageSource FontFamily="{DynamicResource IconFont}"
                              Glyph="{DynamicResource Calendar}"
-                             Size="16"/>
+                             Size="24"/>
         </views:SchedulePage.IconImageSource>
     </views:SchedulePage>
-    <views:NotificationPage Title="Notification">
+    <views:NotificationPage Title="">
         <views:NotificationPage.IconImageSource>
             <FontImageSource FontFamily="{DynamicResource IconFont}"
-                             Glyph="{DynamicResource Bell}"
-                             Size="16" />
+                             Glyph="{DynamicResource Notification}"
+                             Size="24" />
         </views:NotificationPage.IconImageSource>
     </views:NotificationPage>
 </TabbedPage>

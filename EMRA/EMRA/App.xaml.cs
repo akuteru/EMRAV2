@@ -19,10 +19,10 @@ namespace EMRA
 
         protected override async void OnInitialized()
         {
-            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mjk1Mjc4QDMxMzgyZTMyMmUzMEJpUUVva0lzL0F1S2Z4QzRmYVRnMTF5a0tvalZVTlZhTzFNYWYrQ3lZdW89");
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MzU2NzUwQDMxMzgyZTMzMmUzMFdTL2dMUUQvODdwOWpJZ0FRd2tNRXBOYk10UTBXalo2Y2FURyt3L29KOHM9");
             InitializeComponent();
             XF.Material.Forms.Material.Init(this);
-            await NavigationService.NavigateAsync("MainBottomTabbedPage");
+            await NavigationService.NavigateAsync("LoginPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -32,12 +32,15 @@ namespace EMRA
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
-            containerRegistry.RegisterForNavigation<MainBottomTabbedPage, MainBottomTabbedPageViewModel>();
+            containerRegistry.RegisterForNavigation<MainBottomTabbedPage, MainBottomTabbedPageViewModel>("MainTabbed");
             containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
             containerRegistry.RegisterForNavigation<MapPage, MapPageViewModel>();
             containerRegistry.RegisterForNavigation<SchedulePage, SchedulePageViewModel>();
             containerRegistry.RegisterForNavigation<NotificationPage, NotificationPageViewModel>();
             containerRegistry.RegisterForNavigation<UserMasterDetailPage, UserMasterDetailPageViewModel>();
+            containerRegistry.RegisterForNavigation<UserMenuPage, UserMenuPageViewModel>();
+            containerRegistry.RegisterForNavigation<DoctorProfilePage, DoctorProfilePageViewModel>();
+            containerRegistry.RegisterForNavigation<AddAppointment, AddAppointmentViewModel>();
         }
     }
 }

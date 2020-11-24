@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMRA", "EMRA\EMRA.csproj", "{BF2D8F91-0A89-43D2-827A-F212E3910CE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EMRA", "EMRA\EMRA.csproj", "{BF2D8F91-0A89-43D2-827A-F212E3910CE9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMRA.Android", "EMRA.Android\EMRA.Android.csproj", "{9ABC138B-E1A3-40BB-A088-A0AD79763A39}"
 EndProject

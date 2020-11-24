@@ -1,8 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:prism="http://prismlibrary.com"
+             xmlns:prism="http://prismlibrary.com" xmlns:material="clr-namespace:XF.Material.Forms.UI;assembly=XF.Material" xmlns:sfCalendar="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms" xmlns:sfList="clr-namespace:Syncfusion.ListView.XForms;assembly=Syncfusion.SfListView.XForms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="EMRA.Views.SchedulePage">
-
-</CarouselPage>
+    <ContentPage.Content>
+        <Grid>
+            <ScrollView>
+                <Grid Padding="15">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <material:MaterialLabel HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand" Text="Schedule" TypeScale="H4" FontFamily="{DynamicResource FontDefault}" TextColor="{DynamicResource SecondaryColor}"/>
+                    <sfCalendar:SfCalendar Grid.Row="1" ViewMode="MonthView" HeightRequest="750" />
+                    <sfList:SfListView ItemsSource="{Binding ScheduleList}" AllowSwiping="True" Grid.Row="2" TapCommand="{Binding ViewSchedule}" Margin="0,10,0,0">
+                        <sfList:SfListView.ItemTemplate>
+                            <DataTemplate>
+                                <SwipeView>
+                                    <material:MaterialCard>
+                                        <StackLayout>
+                                            <material:MaterialLabel FontFamily="{DynamicResource FontDefaultBold}" Text="{Binding Title}" TextColor="{DynamicResource SecondaryColor}" TypeScale="H6" />
+                                            <material:MaterialLabel FontFamily="{DynamicResource FontDefaultItalic}" Text="{Binding ScheduleDate}" TypeScale="Caption" />
+                                            <material:MaterialLabel FontFamily="{DynamicResource FontDefault}" Text="{Binding Description}" TypeScale="Body1" />
+                                            <material:MaterialMenuButton ButtonType="Text" Choices="{Binding MenuChoices}" Command="{Binding MenuCommand}"  />
+                                        </StackLayout>
+                                    </material:MaterialCard>
+                                </SwipeView>
+                            </DataTemplate>
+                        </sfList:SfListView.ItemTemplate>
+                    </sfList:SfListView>
+                </Grid>
+            </ScrollView>
+            <AbsoluteLayout HorizontalOptions="End" VerticalOptions="End">
+                <material:MaterialButton CornerRadius="40" Margin="0,0,30,30" WidthRequest="90" VerticalOptions="Center"  HorizontalOptions="Center" HeightRequest="90" FontFamily="{DynamicResource IconFont}" Text="{DynamicResource AddCalendar}" BackgroundColor="{DynamicResource SecondaryColor}" FontSize="34" Command="{Binding CreateAppointment}" TextColor="White"/>
+            </AbsoluteLayout>
+        </Grid>
+      
+    </ContentPage.Content>
+</ContentPage>

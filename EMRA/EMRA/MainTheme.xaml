@@ -2,26 +2,55 @@
 <ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="EMRA.MainTheme">
-    
+
+    <!-- Typography / Fonts -->
     <OnPlatform x:Key="IconFont" x:TypeArguments="x:String">
         <OnPlatform.Platforms>
-            <On Platform="Android" Value="icofont.ttf#Icofont" />
+            <On Platform="Android" Value="materialdesignicons-webfont.ttf#Materialdesignicons-webfont" />
             <On Platform="iOS" Value="icofont" />
         </OnPlatform.Platforms>
     </OnPlatform>
-
-    <x:String x:Key="Menu">&#xefa2;</x:String>
-    <x:String x:Key="Search">&#xec82;</x:String>
-    <x:String x:Key="MapPin">&#xed42;</x:String>
-    <x:String x:Key="Back">&#xea5c;</x:String>
-    <x:String x:Key="Home">&#xec5e;</x:String>
-    <x:String x:Key="Facebook">&#xed37;</x:String>
-    <x:String x:Key="Alarm">&#xec3f;</x:String>
-    <x:String x:Key="Notification">&#xeea3;</x:String>
-    <x:String x:Key="Bell">&#xefac;</x:String>
-    <x:String x:Key="Calendar">&#xec45;</x:String>
-    <x:String x:Key="Physician">&#xec19;</x:String>
+    <OnPlatform x:Key="FontDefault" x:TypeArguments="x:String">
+        <On Platform="Android" Value="NotoSans-Regular.ttf#NotoSans-Regular"/>
+        <On Platform="iOS" Value="NotoSans-Regular"/>
+    </OnPlatform>
+    <OnPlatform x:Key="FontDefaultBold" x:TypeArguments="x:String">
+        <On Platform="Android" Value="NotoSans-Bold.ttf#NotoSans-Bold"/>
+        <On Platform="iOS" Value="NotoSans-Bold"/>
+    </OnPlatform>
+    <OnPlatform x:Key="FontDefaultItalic" x:TypeArguments="x:String">
+        <On Platform="Android" Value="NotoSans-Italic.ttf#NotoSans-Italic"/>
+        <On Platform="iOS" Value="NotoSans-Italic"/>
+    </OnPlatform>
+    <!-- Colors -->
+    <Color x:Key="PrimaryColor">#44d0e1</Color>
+    <Color x:Key="PrimaryColorDark">#009faf</Color>
+    <Color x:Key="PrimaryColorLight">#88ffff</Color>
+    <Color x:Key="SecondaryColor">#ef5350</Color>
+    <Color x:Key="SecondaryColorDark">#b61827</Color>
+    <Color x:Key="SecondaryColorLight">#ff867c</Color>
+    <!-- Icons -->
+    
+    <x:String x:Key="Menu">&#xf035c;</x:String>
+    <x:String x:Key="Search">&#xf0349;</x:String>
+    <x:String x:Key="MapSearch">&#xf0984;</x:String>
+    <x:String x:Key="MapPin">&#xf05f5;</x:String>
+    <x:String x:Key="Back">&#xf030d;</x:String>
+    <x:String x:Key="Next">&#xea5d;</x:String>
+    <x:String x:Key="Home">&#xf02dc;</x:String>
+    <x:String x:Key="Facebook">&#xf020c;</x:String>
+    <x:String x:Key="Alarm">&#xf0020;</x:String>
+    <x:String x:Key="Notification">&#xf009a;</x:String>
+    <x:String x:Key="NotificationNew">&#xf0d59;</x:String>
+    <x:String x:Key="BellAdd">&#xf009d;</x:String>
+    <x:String x:Key="Calendar">&#xf00ed;</x:String>
+    <x:String x:Key="Physician">&#xf0a42;</x:String>
     <x:String x:Key="Laboratory">&#xec25;</x:String>
-    <x:String x:Key="Medicine">&#xef8e;</x:String>
-    <x:String x:Key="CheckupRecord">&#xec2e;</x:String>
+    <x:String x:Key="Medicine">&#xf06ef;</x:String>
+    <x:String x:Key="Pill">&#xf0402;</x:String>
+    <x:String x:Key="CheckupRecord">&#xf10d4;</x:String>
+    <x:String x:Key="Add">&#xefc2;</x:String>
+    <x:String x:Key="New">&#xf0394;</x:String>
+    <x:String x:Key="User">&#xf0004;</x:String>
+    <x:String x:Key="AddCalendar">&#xf00f3;</x:String>
 </ResourceDictionary>

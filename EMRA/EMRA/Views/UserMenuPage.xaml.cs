@@ -2,9 +2,9 @@
 
 namespace EMRA.Views
 {
-    public partial class SchedulePage : ContentPage
+    public partial class UserMenuPage : ContentPage
     {
-        public SchedulePage()
+        public UserMenuPage()
         {
             InitializeComponent();
         }
